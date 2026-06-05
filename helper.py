@@ -4,50 +4,36 @@ import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 
-# Load spaCy model
-nlp = spacy.load("en_core_web_sm")
+# ---------------- SAFE INIT ----------------
+nltk.download('stopwords')
+nltk.download('punkt')
 
-# Load stopwords
-stop_words = set(stopwords.words('english'))
+try:
+    nlp = spacy.load("en_core_web_sm")
+except:
+    import subprocess
+    import sys
+    subprocess.run([sys.executable, "-m", "spacy", "download", "en_core_web_sm"])
+    nlp = spacy.load("en_core_web_sm")
+
 
 def preprocess_text(text):
 
-    # Handle missing values
-    text = str(text)
+    text = str(text).lower()
 
-    # Convert to lowercase
-    text = text.lower()
-
-    # Remove URLs
     text = re.sub(r'https?://\S+|www\.\S+', ' ', text)
-
-    # Remove HTML tags
     text = re.sub(r'<.*?>', ' ', text)
-
-    # Remove special characters, punctuation, numbers
     text = re.sub(r'[^a-zA-Z\s]', ' ', text)
-
-    # Remove extra whitespaces
     text = re.sub(r'\s+', ' ', text).strip()
 
-    # Tokenization
     tokens = word_tokenize(text)
 
-    # Stopword removal
-    tokens = [
-        word
-        for word in tokens
-        if word not in stop_words
-    ]
+    stop_words = set(stopwords.words('english'))
 
-    # Lemmatization
+    tokens = [w for w in tokens if w not in stop_words]
+
     doc = nlp(" ".join(tokens))
 
-    tokens = [
-        token.lemma_
-        for token in doc
-    ]
+    tokens = [token.lemma_ for token in doc]
 
-    processed_text = " ".join(tokens)
-
-    return processed_text
+    return " ".join(tokens)
