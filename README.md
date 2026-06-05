@@ -118,7 +118,7 @@ Aniket Bangar
 
 B.Tech AI & Data Science
 Passionate about Data, Machine Learning, and GenAI
-⭐ If you like this project
 
+⭐ If you like this project
 Give it a ⭐ on GitHub and feel free to contribute!
 
