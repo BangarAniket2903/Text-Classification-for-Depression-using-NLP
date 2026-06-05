@@ -1,17 +1,8 @@
 import streamlit as st
 import pickle
 from helper import preprocess_text
-
 import nltk
-
-resources = ['stopwords', 'punkt']
-
-for r in resources:
-    try:
-        nltk.data.find(f'corpora/{r}')
-    except LookupError:
-        nltk.download(r)
-        
+  
 # 1. Page Configuration
 st.set_page_config(
     page_title="MindCare | NLP Text Analytics",
