@@ -1,13 +1,17 @@
 🧠 Depression Detection using NLP (Text Classification)
+
+
 📌 Overview
 
 This project is a Natural Language Processing (NLP) based Depression Detection System that classifies user input text as Depressed or Not Depressed.
 
 The goal is to analyze mental health-related text patterns using machine learning and build a simple, interactive web application using Streamlit.
 
+
 🚀 Live Demo
 
 👉 [https://your-streamlit-app-link.streamlit.app](https://text-classification-for-depression-using-nlp.streamlit.app/)
+
 
 📊 Problem Statement
 
@@ -16,11 +20,13 @@ Mental health issues such as depression are often reflected in language patterns
 Detect depressive language in text
 Provide a lightweight and interpretable ML solution
 
+
 📁 Dataset
 Source: Reddit-based mental health dataset
 Columns:
 text → user input text
 target → 0 (Not Depressed), 1 (Depressed)
+
 
 🧹 Data Preprocessing
 
@@ -34,10 +40,12 @@ Tokenization
 Lemmatization (used during experimentation)
 Final cleaned text used for TF-IDF vectorization
 
+
 🔠 Feature Engineering
 Technique: TF-IDF Vectorization
 Features selected: 3000 most important words
 Converted text into numerical feature vectors
+
 
 🤖 Model Building & Experiments
 
@@ -84,6 +92,7 @@ Extra Trees
 Meta model:
 Random Forest
 
+
 🏆 Final Model Selection
 
 After extensive experimentation and evaluation on metrics such as:
@@ -96,10 +105,12 @@ F1 Score
 
 🥇 Logistic Regression with TF-IDF (3000 features)
 
+
 ⚠️ Disclaimer
 
 This project is for educational purposes only.
 It is not a medical diagnosis tool and should not replace professional mental health advice.
+
 
 👨‍💻 Author
 
