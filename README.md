@@ -1,124 +1,209 @@
-🧠 Depression Detection using NLP (Text Classification)
+# 🧠 Depression Detection using NLP (Text Classification)
 
+## 📌 Project Overview
 
-📌 Overview
+This project is a **Natural Language Processing (NLP)** based **Depression Detection System** that classifies user-generated text as either:
 
-This project is a Natural Language Processing (NLP) based Depression Detection System that classifies user input text as Depressed or Not Depressed.
+* **Depressed**
+* **Not Depressed**
 
-The goal is to analyze mental health-related text patterns using machine learning and build a simple, interactive web application using Streamlit.
+The objective is to identify depression-related linguistic patterns using machine learning techniques and provide predictions through a simple and interactive **Streamlit web application**.
 
+---
 
-🚀 Live Demo
+## 🚀 Live Demo
 
-👉 [https://your-streamlit-app-link.streamlit.app](https://text-classification-for-depression-using-nlp.streamlit.app/)
+👉 https://text-classification-for-depression-using-nlp.streamlit.app/
 
+---
 
-📊 Problem Statement
+## 📊 Problem Statement
 
-Mental health issues such as depression are often reflected in language patterns. This project aims to:
+Mental health conditions such as depression often manifest through language patterns and written communication.
 
-Detect depressive language in text
-Provide a lightweight and interpretable ML solution
+This project aims to:
 
+* Detect depressive language in text data
+* Build a lightweight and interpretable machine learning solution
+* Demonstrate the application of NLP techniques in mental health analytics
+* Provide a user-friendly web interface for real-time predictions
 
-📁 Dataset
-Source: Reddit-based mental health dataset
-Columns:
-text → user input text
-target → 0 (Not Depressed), 1 (Depressed)
+---
 
+## 📁 Dataset
 
-🧹 Data Preprocessing
+### Source
 
-The following preprocessing steps were applied:
+Reddit-based Mental Health Dataset
 
-Lowercasing text
-Removing URLs and HTML tags
-Removing special characters, numbers, and punctuation
-Removing stopwords
-Tokenization
-Lemmatization (used during experimentation)
-Final cleaned text used for TF-IDF vectorization
+### Dataset Features
 
+| Column   | Description                                             |
+| -------- | ------------------------------------------------------- |
+| `text`   | User-generated text content                             |
+| `target` | Classification label (0 = Not Depressed, 1 = Depressed) |
 
-🔠 Feature Engineering
-Technique: TF-IDF Vectorization
-Features selected: 3000 most important words
-Converted text into numerical feature vectors
+---
 
+## 🧹 Data Preprocessing
 
-🤖 Model Building & Experiments
+To improve text quality and model performance, the following preprocessing steps were applied:
 
-A wide range of machine learning models were evaluated to identify the best performer.
+* Converted text to lowercase
+* Removed URLs and HTML tags
+* Removed special characters and punctuation
+* Removed numeric values
+* Removed stopwords
+* Tokenized text
+* Applied lemmatization during experimentation
+* Generated final cleaned text for feature extraction
 
-📌 1. Naive Bayes Family
+---
 
-We implemented and tested:
+## 🔠 Feature Engineering
 
-Gaussian Naive Bayes
-Multinomial Naive Bayes
-Bernoulli Naive Bayes
+### Technique Used
 
-These models served as strong baseline classifiers for text data.
+**TF-IDF (Term Frequency–Inverse Document Frequency)**
 
-📌 2. Traditional Machine Learning Models
+### Process
 
-We trained and compared multiple algorithms:
+* Converted textual data into numerical feature vectors
+* Selected the **3,000 most informative features**
+* Prepared sparse matrices suitable for machine learning algorithms
 
-Logistic Regression
-Linear Support Vector Classifier (LinearSVC)
-Decision Tree
-Random Forest
-Extra Trees Classifier
-AdaBoost
-Gradient Boosting
+---
 
-📌 3. Ensemble Methods
+## 🤖 Model Building & Experiments
 
-To improve performance further, we implemented:
+Multiple machine learning models were trained and evaluated to identify the best-performing classifier.
 
-✅ Voting Classifier
-Combined models:
-Random Forest
-Extra Trees
-Logistic Regression
+### 📌 1. Naive Bayes Family
 
-✅ Stacking Classifier
-Base models:
-SVC
-Logistic Regression
-Extra Trees
+The following baseline text classification models were implemented:
 
-Meta model:
-Random Forest
+* Gaussian Naive Bayes
+* Multinomial Naive Bayes
+* Bernoulli Naive Bayes
 
+These models provided a strong benchmark for evaluating more advanced algorithms.
 
-🏆 Final Model Selection
+---
 
-After extensive experimentation and evaluation on metrics such as:
+### 📌 2. Traditional Machine Learning Models
 
-Accuracy
-Precision
-Recall
-F1 Score
-✔ Final Selected Model:
+The following supervised learning algorithms were trained and compared:
 
-🥇 Logistic Regression with TF-IDF (3000 features)
+* Logistic Regression
+* Linear Support Vector Classifier (LinearSVC)
+* Decision Tree Classifier
+* Random Forest Classifier
+* Extra Trees Classifier
+* AdaBoost Classifier
+* Gradient Boosting Classifier
 
+---
 
-⚠️ Disclaimer
+### 📌 3. Ensemble Learning Methods
 
-This project is for educational purposes only.
-It is not a medical diagnosis tool and should not replace professional mental health advice.
+To further improve predictive performance, ensemble techniques were implemented.
 
+#### ✅ Voting Classifier
 
-👨‍💻 Author
+Combined Models:
 
-Aniket Bangar
+* Random Forest
+* Extra Trees
+* Logistic Regression
 
-B.Tech AI & Data Science
-Passionate about Data, Machine Learning, and GenAI
+#### ✅ Stacking Classifier
 
-⭐ If you like this project
-Give it a ⭐ on GitHub and feel free to contribute!
+**Base Models**
 
+* Support Vector Classifier (SVC)
+* Logistic Regression
+* Extra Trees Classifier
+
+**Meta Model**
+
+* Random Forest Classifier
+
+---
+
+## 📈 Model Evaluation
+
+Models were evaluated using the following classification metrics:
+
+* Accuracy
+* Precision
+* Recall
+* F1 Score
+
+Performance comparisons were conducted to identify the most reliable and generalizable model.
+
+---
+
+## 🏆 Final Model Selection
+
+After extensive experimentation and performance evaluation:
+
+### 🥇 Selected Model
+
+**Logistic Regression + TF-IDF (3000 Features)**
+
+### Why Logistic Regression?
+
+* Consistent performance across evaluation metrics
+* Strong generalization capability
+* Computationally efficient
+* Highly interpretable compared to complex ensemble methods
+
+---
+
+## 🛠️ Technology Stack
+
+| Category             | Tools & Libraries   |
+| -------------------- | ------------------- |
+| Programming Language | Python              |
+| Data Manipulation    | Pandas, NumPy       |
+| NLP                  | NLTK, Regex         |
+| Feature Engineering  | TF-IDF Vectorizer   |
+| Machine Learning     | Scikit-Learn        |
+| Web Application      | Streamlit           |
+| Visualization        | Matplotlib, Seaborn |
+
+---
+
+## ⚠️ Disclaimer
+
+This project is intended for **educational and research purposes only**.
+
+The predictions generated by this application should **not be considered medical advice or a professional diagnosis**. Individuals experiencing mental health concerns should consult qualified healthcare professionals.
+
+---
+
+## 👨‍💻 Author
+
+### Aniket Bangar
+
+**B.Tech – Artificial Intelligence & Data Science**
+
+Passionate about:
+
+* Data Analytics
+* Machine Learning
+* Natural Language Processing
+* Generative AI
+
+---
+
+## ⭐ Support the Project
+
+If you found this project helpful:
+
+* ⭐ Star the repository
+* 🍴 Fork the project
+* 🤝 Contribute improvements
+* 📢 Share your feedback
+
+Your support is greatly appreciated!
